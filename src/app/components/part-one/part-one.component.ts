@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TimelineMax, Expo, Elastic,CSSPlugin  } from 'gsap';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-part-one',
@@ -8,7 +9,9 @@ import { TimelineMax, Expo, Elastic,CSSPlugin  } from 'gsap';
 })
 export class PartOneComponent implements OnInit, AfterViewInit{
   @ViewChild('hbdChatbox') hbdChatbox!: ElementRef;
-  constructor() { 
+  hideNextStageButton: boolean = true;
+
+  constructor(private cdr: ChangeDetectorRef) { 
     this.hbdChatbox = new ElementRef(null);
   }
   playMusic() { 
@@ -16,7 +19,7 @@ export class PartOneComponent implements OnInit, AfterViewInit{
     audio.src = 'assets/audio/audio_jazz.ogg'; // Path to your audio file
     audio.play();
   }
-  
+
 
   ngAfterViewInit(): void {
 
@@ -43,7 +46,6 @@ export class PartOneComponent implements OnInit, AfterViewInit{
 
     const plugins = [CSSPlugin]; // Register the CSSPlugin
 
-    this.animationTimeline();
 
   }
 
@@ -52,7 +54,6 @@ export class PartOneComponent implements OnInit, AfterViewInit{
     // Spit chars that needs to be animated individually
     const textBoxChars: HTMLDivElement = document.getElementsByClassName("hbd-chatbox")[0] as HTMLDivElement;
     const hbd: HTMLDivElement = document.getElementsByClassName("wish-hbd")[0] as HTMLDivElement;
-
     textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
         .split("")
         .join("</span><span>")}</span`;
@@ -75,8 +76,8 @@ export class PartOneComponent implements OnInit, AfterViewInit{
         skewX: "-15deg",
     };
 
-    const tl = new TimelineMax();
-    ; 
+    const tl = new TimelineMax({ paused: true });
+  
     tl.to(".container-special", 0.1, {
       visibility: "visible",
     })
@@ -291,10 +292,14 @@ export class PartOneComponent implements OnInit, AfterViewInit{
           skewX: "-15deg",
         },
         "party"
-      )
+      ).add(() => {
+        this.hideNextStageButton = false;
+        this.cdr.detectChanges();
+
+      }, "+=1")
       .staggerTo(
         ".eight svg",
-        1.5,
+        100,
         {
           visibility: "visible",
           opacity: 0,
@@ -304,30 +309,13 @@ export class PartOneComponent implements OnInit, AfterViewInit{
         },
         0.3
       )
-      .to(".six", 0.5, {
-        opacity: 0,
-        y: 30,
-        zIndex: "-1",
-      })
-      .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
-      .to(
-        ".last-smile",
-        0.5,
-        {
-          rotation: 90,
-        },
-        "+=1"
-      );
 
-    // Restart Animation on click
-    const replyBtn: HTMLButtonElement = document.getElementById("replay") as HTMLButtonElement;
-    replyBtn.addEventListener("click", () => {
-      tl.restart();
-    });
+        tl.play();
+
   }
-
+  startShow(): void {
+    this.animationTimeline();
+  }
 }
 
-function ngOnInit() {
-  throw new Error('Function not implemented.');
-}
+

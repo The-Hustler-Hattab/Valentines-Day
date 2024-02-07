@@ -2,8 +2,8 @@
 
   
   .container-special {
-    height: 100vh;
-    width: 100vh;
+    height: 75vh;
+    width: 75vh;
     margin: 0 auto;
     text-align: center;
     visibility: hidden;
@@ -61,7 +61,7 @@
   }
   .four .text-box {
     width: 60%; /* Adjust the width as a percentage of the viewport width */
-    max-width: 600px; /* Set a maximum width to avoid stretching on larger screens */
+    max-width: 700px; /* Set a maximum width to avoid stretching on larger screens */
     margin: 0 auto;
     border: 0.2em solid #aaa; /* Border thickness in em units */
     border-radius: 0.5em; /* Border radius in em units */
@@ -92,7 +92,7 @@
   }
   
   .five p {
-    font-size: 2rem;
+    font-size: 1.8rem;
     position: absolute;
     left: 0;
     right: 0;
@@ -107,7 +107,7 @@
   }
   
   .five .idea-5 {
-    font-size: 4rem;
+    font-size: 1.8rem;
     
     color: rgb(228, 222, 222);
 
@@ -238,7 +238,7 @@
     font-size: 3em;
     top: 10vh;
     text-transform: uppercase; 
-    color: rgb(228, 222, 222);
+    color: crimson;
     position: relative;
     margin-top: 5vh;
   }
