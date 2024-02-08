@@ -2,14 +2,20 @@
 
   
   .container-special {
-    height: 75vh;
-    width: 75vh;
+    height: 80vh;
+    width: 80vh;
     margin: 0 auto;
     text-align: center;
     visibility: hidden;
     position: relative;
     overflow: hidden;
     
+  }
+  @media screen and (max-width: 768px) {
+    .container-special {
+      height: 70vh; 
+      width: 70vh; 
+    }
   }
   
   .container-special div.six {
