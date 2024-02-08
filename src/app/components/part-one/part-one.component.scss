@@ -11,12 +11,7 @@
     overflow: hidden;
     
   }
-  @media screen and (max-width: 768px) {
-    .container-special {
-      height: 70vh; 
-      width: 70vh; 
-    }
-  }
+
   
   .container-special div.six {
     top: 10vh;
@@ -41,7 +36,7 @@
   
   .one {
     font-size: 5.5rem;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: auto;
   }
   
@@ -55,25 +50,25 @@
   .two {
     font-size: 2.2rem;
     font-weight: lighter;
-    color: rgb(228, 222, 222);
+    color: rgb(0, 0, 0);
     position: relative; 
     top: 5vh; 
   }
   
   .three {
     font-size: 3rem;
-    color: rgb(228, 222, 222);
+    color: rgb(0, 0, 0);
 
   }
   .four .text-box {
     width: 60%; /* Adjust the width as a percentage of the viewport width */
     max-width: 700px; /* Set a maximum width to avoid stretching on larger screens */
     margin: 0 auto;
-    border: 0.2em solid #aaa; /* Border thickness in em units */
+    border: 0.2em solid #3b3535; /* Border thickness in em units */
     border-radius: 0.5em; /* Border radius in em units */
     padding: 1em; /* Padding in em units */
     position: relative;
-    color: rgb(228, 222, 222);
+    color: rgb(0, 0, 0);
     font-size: 1.2em; /* Font size in em units */
     top: 10vh; /* Adjust positioning relative to the viewport height */
   }
@@ -91,7 +86,7 @@
     position: absolute;
     right: 5px;
     bottom: 5px;
-    color: #fff;
+    color: #000000;
     background-color: rgb(21, 161, 237);
     padding: 5px 8px;
     border-radius: 3px;
@@ -102,7 +97,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    color: rgb(228, 222, 222);
+    color: rgb(0, 0, 0);
 
   }
   
@@ -115,7 +110,7 @@
   .five .idea-5 {
     font-size: 1.8rem;
     
-    color: rgb(228, 222, 222);
+    color: rgb(72, 63, 63);
 
   }
   
@@ -127,7 +122,7 @@
   
   .idea-6 span {
     font-size: 15rem;
-    color: rgb(228, 222, 222);
+    color: rgb(54, 48, 48);
 
   }
   
@@ -234,7 +229,7 @@
     font-size: 3em;
     margin: 0;
     /* text-transform: uppercase; */
-    color: rgb(228, 222, 222);
+    color: rgb(42, 37, 37);
     position: relative;
 
     top: 5vh;
@@ -330,7 +325,7 @@
     .nine p {
       font-size: 1.5rem;
       font-weight: lighter;
-      color: #fff;
+      color: #272222;
     }
   }
 
@@ -344,4 +339,17 @@
     display: inline-block;
     width: 0;
     animation: typing 0s steps(30, end) infinite;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .one{
+      font-size: 3.5rem;
+    }
+    .five{
+      font-size: 1.5rem;
+    }
+    #wishText{
+      font-size: 1.5rem;
+    }
   }

@@ -40,7 +40,7 @@
     <img src="assets/img/Mary.png" alt="" class="girl-dp" id="imagePath" />
     <div class="wish">
       <h3 class="wish-hbd">Happy Valentine's Day Gorgeous</h3>
-      <h5 id="wishText">I will steal you one day!!</h5>
+      <h5 id="wishText">I Want you to be MINE ❤️</h5>
       <a  routerLink="/part-two" class="wishText btn btn-danger btn-lg " [hidden]="hideNextStageButton">Next Stage</a>
     </div>
   </div>
@@ -73,7 +73,7 @@
     </div>
   </div>
 
-  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"  hidden>
     <circle cx="20" cy="20" r="20" />
   </svg>
 
@@ -85,7 +85,9 @@
   <div class="container mt-10">
     <div class="row">
       <div class="col text-center">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" (click)="startShow()">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+         (click)="startShow()"
+         [hidden]="hideStartButton">
           Start the Show
         </button>
       </div>

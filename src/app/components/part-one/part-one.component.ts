@@ -10,6 +10,7 @@ import { ChangeDetectorRef } from '@angular/core';
 export class PartOneComponent implements OnInit, AfterViewInit{
   @ViewChild('hbdChatbox') hbdChatbox!: ElementRef;
   hideNextStageButton: boolean = true;
+  hideStartButton: boolean = false;
 
   constructor(private cdr: ChangeDetectorRef) { 
     this.hbdChatbox = new ElementRef(null);
@@ -51,6 +52,7 @@ export class PartOneComponent implements OnInit, AfterViewInit{
 
   // Animation Timeline
   private animationTimeline(): void {
+    this.hideStartButton = true;
     // Spit chars that needs to be animated individually
     const textBoxChars: HTMLDivElement = document.getElementsByClassName("hbd-chatbox")[0] as HTMLDivElement;
     const hbd: HTMLDivElement = document.getElementsByClassName("wish-hbd")[0] as HTMLDivElement;
