@@ -1,4 +1,13 @@
-
+<div class="container mt-10">
+  <div class="row">
+    <div class="col text-center">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+       (click)="startShow()"
+       [hidden]="hideStartButton">
+        Start the Show
+      </button>
+    </div>
+  </div>
 <div class="container-special">
   <div class="one">
     <h1 class="one">
@@ -82,14 +91,5 @@
 
 
 
-  <div class="container mt-10">
-    <div class="row">
-      <div class="col text-center">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
-         (click)="startShow()"
-         [hidden]="hideStartButton">
-          Start the Show
-        </button>
-      </div>
-    </div>
+
 </div>
