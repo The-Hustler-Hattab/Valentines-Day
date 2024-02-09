@@ -37,6 +37,8 @@
   .one {
     font-size: 5.5rem;
     color: rgb(0, 0, 0);
+    position: relative;
+
     padding: auto;
   }
   
@@ -44,6 +46,8 @@
     vertical-align: middle;
     margin-bottom: 10px;
     max-width: 100%;
+    position: relative;
+
     height: auto;
   }
   
@@ -57,6 +61,8 @@
   
   .three {
     font-size: 3rem;
+    position: relative;
+
     color: rgb(0, 0, 0);
 
   }
@@ -71,6 +77,8 @@
     color: rgb(0, 0, 0);
     font-size: 1.2em; /* Font size in em units */
     top: 10vh; /* Adjust positioning relative to the viewport height */
+    position: relative;
+
   }
   
   .text-box p {
@@ -344,7 +352,10 @@
   @media screen and (max-width: 768px) {
 
     .one{
-      font-size: 3.5rem;
+      font-size: 3.0rem;
+    }
+    .three{
+      font-size: 2.2rem;
     }
     .five{
       font-size: 1.5rem;
