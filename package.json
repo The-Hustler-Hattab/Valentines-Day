@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href; mv CNAME dist/CNAME ",
+    "build": "ng build ; mv CNAME dist/CNAME ",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
