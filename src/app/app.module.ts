@@ -13,6 +13,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PartOneComponent } from './components/part-one/part-one.component';
 import { PartTwoComponent } from './components/part-two/part-two.component';
 import { PartThreeComponent } from './components/part-three/part-three.component';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,11 @@ import { PartThreeComponent } from './components/part-three/part-three.component
     AppRoutingModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
+    HttpClientModule,
+    CommonModule,
   ],
-  providers: [],
+  providers: [HttpClient,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoadingServiceService {
+export class LoadingService {
 
   isLoading: Subject<boolean> = new Subject<boolean>();
 

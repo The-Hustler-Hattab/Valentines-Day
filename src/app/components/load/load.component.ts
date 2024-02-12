@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoadingServiceService } from 'src/app/services/loading-service.service';
+import { LoadingService } from 'src/app/services/loading-service.service';
 
 @Component({
   selector: 'app-load',
@@ -9,7 +9,7 @@ import { LoadingServiceService } from 'src/app/services/loading-service.service'
 export class LoadComponent {
   showSpinner: boolean = false;
 
-  constructor(private lodingService: LoadingServiceService){}
+  constructor(private lodingService: LoadingService){}
   ngOnInit(): void {
     
     this.lodingService.isLoading.subscribe((loading: boolean)=>{

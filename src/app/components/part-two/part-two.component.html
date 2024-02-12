@@ -1,1 +1,35 @@
-<p>part-two works!</p>
+
+<div class="container">
+
+
+<div class="container valentine-container">
+    <h2 class="valentine-title">Happy Valentine's Day!</h2>
+    <p class="text-center">Please insert a picture of yourself or me to see the surprise.</p>
+    <form class="valentine-form"    enctype="multipart/form-data">
+
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02" (change)="onFileSelected($event)">
+        <label class="input-group-text" for="inputGroupFile02"  >Upload</label>
+      </div>
+
+      <label type="submit" class="btn btn-danger btn-block valentine-submit" (click)="onSubmit()">See the Surprise</label>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3" role="alert">
+        {{errorMessage}}
+      </div>
+    </form>
+    <div class="text-center mt-3">
+      <img *ngIf="imageUrl" class="valentine-image" [src]="imageUrl" alt="Preview Image">
+      <p *ngIf="imageUrl" class="valentine-label mt-2">{{ predictionLabel }}</p>
+    </div>
+    <div *ngIf="imageUrl" class="valentine-message mt-3">
+        <p class="text-center">{{ romanticMessage }}</p>
+        <div class="container justify-content-center d-flex">
+            <a  routerLink="/part-three" class="btn btn-danger btn-sm " >My Beating Heart</a>
+        </div>
+      </div>
+
+
+      
+  </div>
+
+</div>

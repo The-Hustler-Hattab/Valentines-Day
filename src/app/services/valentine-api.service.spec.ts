@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LoadingService } from './loading-service.service';
+import { ValentineApiService } from './valentine-api.service';
 
-describe('LoadingServiceService', () => {
-  let service: LoadingService;
+describe('ValentineApiService', () => {
+  let service: ValentineApiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LoadingService);
+    service = TestBed.inject(ValentineApiService);
   });
 
   it('should be created', () => {
